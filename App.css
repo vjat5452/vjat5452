@@ -1,0 +1,759 @@
+/* === Global & App Layout === */
+:root {
+    --primary-color: #3498db;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --warning-color: #fd7e14;
+    --info-color: #3498db; /* Re-using primary for info */
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #6c757d;
+    --text-dark: #2c3e50;
+    --text-light: #495057;
+    --page-bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --card-radius: 8px;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--page-bg);
+    margin: 0;
+    color: var(--text-light);
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* === App Header & Navigation === */
+.App-header {
+    background: var(--text-dark);
+    color: white;
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.App-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.connection-status {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    font-weight: 500;
+}
+.connection-status .connected {
+    color: #2ecc71; /* Green */
+    font-weight: 700;
+}
+.connection-status .disconnected {
+    color: #e74c3c; /* Red */
+    font-weight: 700;
+}
+.connection-status .checking {
+    color: #f39c12; /* Yellow */
+}
+
+.main-nav {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    border-bottom: 1px solid #4a657c;
+}
+
+.main-nav button {
+    background: none;
+    border: none;
+    color: #bdc3c7;
+    padding: 12px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 3px solid transparent;
+    position: relative;
+    top: 1px; /* Aligns with the border */
+}
+
+.main-nav button:hover {
+    color: white;
+    background: #3e5a74;
+}
+
+.main-nav button.active {
+    color: white;
+    border-bottom-color: var(--primary-color);
+}
+
+/* === Main Content & Page Layout === */
+.main-content {
+    padding: 30px 40px;
+    flex: 1;
+}
+
+.error-banner {
+    background: #fff3f3;
+    border: 1px solid var(--danger-color);
+    border-left-width: 5px;
+    color: var(--text-dark);
+    padding: 20px;
+    border-radius: var(--card-radius);
+    margin-bottom: 25px;
+}
+.error-banner ul {
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+.error-banner li {
+    margin-bottom: 5px;
+}
+
+/* Standard Page Wrappers (Used by List, Form, Hierarchy) */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.page-header h2 {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.page-content-card {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden; /* For table corners */
+}
+
+.page-footer {
+    padding: 15px 20px;
+    text-align: right;
+    color: var(--dark-gray);
+    font-size: 14px;
+}
+
+/* === Loading & No Data States === */
+.loading,
+.no-data,
+.no-hierarchy {
+    padding: 60px 30px;
+    text-align: center;
+    color: var(--dark-gray);
+}
+.loading {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.no-data h3,
+.no-hierarchy h3 {
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    margin-top: 0;
+}
+.no-data p,
+.no-hierarchy p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+
+/* === Form Styles (EmployeeForm.js) === */
+
+.employee-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px; /* Padding is now on the form, not the card */
+}
+
+.form-section {
+    background: var(--light-gray);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.form-section h3 {
+    color: var(--text-dark);
+    margin: 0 0 20px 0; /* Cleaned up margin */
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+.form-row:last-child {
+    margin-bottom: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border: 2px solid var(--medium-gray);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+    background: var(--card-bg);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+    background: #f1f3f5;
+    color: var(--dark-gray);
+    cursor: not-allowed;
+}
+.form-group select option:disabled {
+    color: #adb5bd;
+}
+
+.form-group input::placeholder {
+    color: #adb5bd;
+}
+
+/* Form Info */
+.form-info {
+    background: #e8f4fd;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.form-info p {
+    margin: 5px 0;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 25px 30px; /* Moved padding here */
+    border-top: 1px solid var(--medium-gray);
+    background-color: #fafbfc;
+}
+
+/* Error Message */
+.error-message {
+    background: var(--danger-color);
+    color: white;
+    padding: 12px 20px;
+    margin: -30px -30px 25px -30px; /* Stretch to edges */
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+}
+
+
+/* === Employee List & Table Styles (EmployeeList.js) === */
+
+.header-actions {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px;
+    width: 100%;
+    max-width: 650px; /* Adjust as needed */
+}
+
+.search-input {
+    flex: 1; /* Make search bar take available space */
+    min-width: 250px;
+    padding: 12px 16px;
+    border: 2px solid var(--medium-gray);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.employees-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employees-table th,
+.employees-table td {
+    padding: 16px 24px;
+    text-align: left;
+    border-bottom: 1px solid var(--medium-gray);
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.employees-table thead th {
+    background: var(--light-gray);
+    color: var(--text-dark);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.employees-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.employees-table tbody tr:hover {
+    background-color: #fcfdfe;
+}
+
+/* New Avatar & Cell Styles */
+.employee-cell-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.employee-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.employee-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-name-strong {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 15px;
+}
+
+.employee-position-small {
+    font-size: 13px;
+    color: var(--dark-gray);
+}
+
+.employee-email-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.employee-email-link:hover {
+    text-decoration: underline;
+}
+
+/* Type Badges */
+.type-badge {
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.type-badge-org-manager { background-color: var(--danger-color); }
+.type-badge-manager { background-color: var(--warning-color); }
+.type-badge-employee { background-color: var(--primary-color); }
+.type-badge-intern { background-color: var(--success-color); }
+.type-badge-other { background-color: var(--dark-gray); }
+
+.table-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* === Hierarchy Tree Styles (List View) === */
+
+.tree-list-container {
+    padding: 20px 30px;
+    overflow-x: auto;
+}
+
+.tree-list-node {
+    position: relative;
+}
+
+/* The employee row */
+.node-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    position: relative;
+}
+
+/* The container for children, indented */
+.node-children {
+    padding-left: 20px;
+    margin-left: 11px; /* Aligns with the center of the 24px button */
+    position: relative;
+    /* The main vertical line */
+    border-left: 2px solid var(--medium-gray);
+}
+
+/* The horizontal line connecting node to vertical line */
+.tree-list-node {
+    position: relative;
+}
+.tree-list-node::before {
+    content: '';
+    position: absolute;
+    top: 19px; /* Aligns with center of button */
+    left: -29px; /* (20px padding + 11px margin) - 2px border = 29px */
+    width: 29px;
+    height: 2px;
+    background-color: var(--medium-gray);
+}
+
+/* Don't show line for the root node */
+.tree-list-container > .tree-list-node::before {
+    display: none;
+}
+
+/* Style for the +/- button */
+.toggle-btn {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    background: #fff;
+    border: 2px solid var(--medium-gray);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin-right: 10px;
+    color: var(--text-dark);
+    z-index: 1; /* Sits on top of the vertical line */
+}
+.toggle-btn:hover {
+    background: var(--light-gray);
+}
+
+/* Placeholder for alignment when there are no children */
+.toggle-placeholder {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+}
+/* Small dot to connect the line */
+.toggle-placeholder::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--medium-gray);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.node-label {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px; /* Spacing between name and badges */
+}
+.node-meta {
+    font-weight: 400;
+    font-size: 0.85em;
+    color: var(--text-light);
+    background: var(--light-gray);
+    border: 1px solid var(--medium-gray);
+    padding: 2px 6px;
+    border-radius: 4px;
+    /* margin-left: 8px; */ /* Replaced by gap on parent */
+}
+
+/* Style for the child count badge */
+.node-meta-count {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+
+/* === Utility & Button Styles === */
+
+/* Generic Button Styles */
+.btn,
+.btn-cancel,
+.btn-submit,
+.btn-edit,
+.btn-delete,
+.btn-secondary,
+.btn-add {
+    border: none;
+    padding: 12px 24px; /* Standardized padding */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+.btn:disabled,
+.btn-cancel:disabled,
+.btn-submit:disabled,
+.btn-edit:disabled,
+.btn-delete:disabled,
+.btn-secondary:disabled,
+.btn-add:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Primary / Submit / Add */
+.btn-submit,
+.btn-add {
+    background: var(--success-color);
+    color: white;
+}
+.btn-submit:hover,
+.btn-add:hover {
+    background: #219a52;
+}
+
+/* Secondary / Cancel */
+.btn-cancel,
+.btn-secondary {
+    background: var(--dark-gray);
+    color: white;
+}
+.btn-cancel:hover,
+.btn-secondary:hover {
+    background: #5a6873;
+}
+
+/* Edit Button */
+.btn-edit {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 12px; /* Smaller for tables */
+    font-size: 13px;
+}
+.btn-edit:hover {
+    background: #2980b9;
+}
+
+/* Delete Button */
+.btn-delete {
+    background: var(--danger-color);
+    color: white;
+    padding: 8px 12px; /* Smaller for tables */
+    font-size: 13px;
+}
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+
+/* === Responsive Design === */
+@media (max-width: 900px) {
+    .App-header {
+        padding: 20px;
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0; /* Let form-group margin handle spacing */
+        margin-bottom: 0;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group:last-child {
+        margin-bottom: 0;
+    }
+    .form-actions {
+        flex-direction: column;
+    }
+    .btn-cancel,
+    .btn-submit,
+    .btn-add,
+    .btn-secondary {
+        width: 100%;
+    }
+    .tree-list-container {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* === Stacked Card View for Mobile === */
+    .table-wrapper {
+        overflow-x: hidden; /* Hide horizontal scroll on mobile */
+    }
+    
+    .employees-table thead {
+        display: none; /* Hide table header */
+    }
+
+    .employees-table tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid var(--medium-gray);
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        background: var(--card-bg);
+    }
+    
+    .employees-table td {
+        display: block;
+        padding: 12px 18px;
+        text-align: right; /* Align value to the right */
+        position: relative;
+        border-bottom: 1px solid var(--medium-gray);
+        white-space: normal; /* Allow text to wrap */
+    }
+
+    .employees-table tr:last-child td {
+        border-bottom: none;
+    }
+    
+    .employees-table td:last-child {
+        border-bottom: none;
+    }
+
+    /* Create the label on the left */
+    .employees-table td::before {
+        content: attr(data-label); /* Use data-label content */
+        position: absolute;
+        left: 18px;
+        text-align: left;
+        font-weight: 600;
+        color: var(--text-dark);
+        font-size: 13px;
+    }
+    
+    /* Adjust specific cells for card view */
+    .employee-cell-main {
+        padding: 15px 18px;
+        text-align: left;
+    }
+    .employee-cell-main::before {
+        display: none; /* Hide data-label for main cell */
+    }
+
+    .table-actions {
+        display: flex;
+        justify-content: flex-end; /* Keep buttons on the right */
+        gap: 10px;
+    }
+    .table-actions::before {
+         display: none; /* Hide data-label for actions */
+    }
+    
+    .page-footer {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .App-header {
+        padding: 15px;
+    }
+    .main-content {
+        padding: 15px;
+    }
+    .main-nav {
+        gap: 0;
+    }
+    .main-nav button {
+        flex: 1;
+        padding: 12px 5px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .employees-table th,
+    .employees-table td {
+        padding: 12px 15px;
+    }
+}
