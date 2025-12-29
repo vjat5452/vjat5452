@@ -1,9 +1,9 @@
 # About Me
+
 Hi there! 👋 I’m Vijay Kumar Saharan — a full-stack developer and computer science undergraduate at IIIT Jabalpur, currently working as a Full Stack Developer Intern at Swafinix Technologies, building client-facing, production-grade web applications. Previously, I worked at Zexa Technologies as a Software Development Intern, delivering full-stack features for startup and client projects. I build scalable systems using React, Next.js, Node.js, Express, MongoDB, PostgreSQL, TypeScript, and JavaScript, with hands-on experience in AI-powered applications, RAG-based systems, real-time collaboration tools, and distributed architectures. My foundation includes DSA, OOP, DBMS, OS, CN, Machine Learning, and Generative AI, and I actively focus on writing clean, maintainable, and high-performance code while learning system design, cloud, and scalable backend engineering.
 
-Twitter/X : jarvis_0001
-
-LinkedIn : vijay-saharan-16015a264
+Twitter / X: [@jarvis_0001](https://x.com/jarvis_0001)  
+LinkedIn: [Vijay Kumar Saharan](https://www.linkedin.com/in/vijay-saharan-16015a264/)
 
 My tech expertise includes:
 
