@@ -7,8 +7,8 @@ LinkedIn: [Vijay Kumar Saharan](https://www.linkedin.com/in/vijay-saharan-16015a
 
 My tech expertise includes:
 
-Frontend & UI: Next.js, React.js, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion
-Backend & APIs: Django, Django Rest Framework, Node.js, Express.js, Prisma ORM
+Frontend & UI: Next.js, React.js, TypeScript, Tailwind CSS
+Backend & APIs: MongoDb, MYSQL, Node.js, Express.js
 Mobile App Development: Flutter, React Native
 Desktop App Development: Flutter, Wails (Go), Electron, Nextron
 Databases & Auth: PostgreSQL, Supabase, MongoDB, Auth.js, Stripe, Resend, PayloadCMS 3.0
