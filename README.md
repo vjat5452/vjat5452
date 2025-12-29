@@ -1,69 +1,25 @@
 # About Me
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi there! 👋 I'm Bhavik Agarwal — a full stack developer, builder, and founder of Zexa Technologies. I help startups go from idea to launch with fast, reliable, and scalable web solutions. I have worked with MNCs, build production-grade applications — from SaaS products and AI-powered tools to admin panels, analytics dashboards, and high-conversion websites for startups and fast-moving businesses.
 
-## Available Scripts
+Website: https://zexa.app
 
-In the project directory, you can run:
+Twitter/X : BhavikAgarwal13
 
-### `npm start`
+LinkedIn : bhavikagarwal2001
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+My tech expertise includes:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Frontend & UI: Next.js, React.js, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion
+Backend & APIs: Django, Django Rest Framework, Node.js, Express.js, Prisma ORM
+Mobile App Development: Flutter, React Native
+Desktop App Development: Flutter, Wails (Go), Electron, Nextron
+Databases & Auth: PostgreSQL, Supabase, MongoDB, Auth.js, Stripe, Resend, PayloadCMS 3.0
+AI & LLM Integrations: AI agents with custom tools using phidata, LangChain, LangGraph, Vercel AI SDK, OpenAI, Retrieval-Augmented Generation (RAG), speech-to-text
+DevOps & Hosting: Vercel, Render, Neon, AWS EC2/S3, Docker1
+Why work with me?
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Full-cycle development – from brainstorming to deployment
+Rapid prototyping using reusable components and proven boilerplates
+Clean, scalable codebase and efficient database architecture
+Clear communication and reliable delivery – I treat your product like my own
+If you're building something ambitious or need a developer who can move fast and deliver real results, I’d love to connect and help you bring your idea to life.
